@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_R = 20;
-    public static final int OFFSET = 10;
+    public static final int MAX_R = 2000;
+    public static final int OFFSET = 1000;
 
     public static int[][] checked = new int[MAX_R+1][MAX_R+1];
     public static int[][] m = new int[MAX_R+1][MAX_R+1];
