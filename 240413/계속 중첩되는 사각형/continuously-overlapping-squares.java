@@ -16,7 +16,7 @@ public class Main {
         int[] y1 = new int[n];
         int[] x2 = new int[n];
         int[] x1 = new int[n];
-        
+
         for(int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             x1[i] = OFFSET + Integer.parseInt(st.nextToken());
@@ -36,14 +36,8 @@ public class Main {
         int area = 0;
         for(int x = 0; x <= MAX_R; x++) {
             for(int y = 0; y <= MAX_R; y++) {
-                if(n % 2 == 0) {
-                    if(checked[x][y] == n) {
-                        area++;
-                    }
-                } else {
-                    if(checked[x][y] == n-1) {
-                        area++;
-                    }
+                if(checked[x][y] % 2 == 0 && checked[x][y] != 0) {
+                    area++;
                 }
             }
         }
