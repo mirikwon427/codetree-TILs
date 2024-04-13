@@ -8,7 +8,6 @@ public class Main {
 
         int n = Integer.parseInt(st.nextToken());
 
-        int cnt = 1;
         int[] a = new int[n];
         int[] b = new int[n];
         for(int i = 0; i < n; i++) {
@@ -16,11 +15,13 @@ public class Main {
             a[i] = Integer.parseInt(st.nextToken());
         }
         int max = 0;
+        int cnt = 0;
         for(int i = 0; i < n; i++) {
+            cnt++;
             if(i == 0 || a[i] == a[i-1]) {
                 cnt++;
             } else {
-                cnt = 1;
+                cnt = 0;
             }
             if(max < cnt) {
                 max = cnt;
