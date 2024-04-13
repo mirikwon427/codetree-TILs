@@ -17,7 +17,6 @@ public class Main {
         int max = 0;
         int cnt = 0;
         for(int i = 0; i < n; i++) {
-            cnt++;
             if(i == 0 || a[i] == a[i-1]) {
                 cnt++;
             } else {
@@ -27,6 +26,11 @@ public class Main {
                 max = cnt;
             }
         }
-        System.out.print(max);
+        if( n == 1 ) {
+            System.out.print(n);
+        } else {
+            System.out.print(max + 1);
+        }
+        
     }
 }
