@@ -12,7 +12,6 @@ public class Main {
         int[] a = new int[n];
         for(int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-
             a[i] = Integer.parseInt(st.nextToken());
         }
         int ans = 0, cnt = 0;
@@ -23,7 +22,7 @@ public class Main {
                 cnt = 1;
             }
 
-            ans = Math.max(cnt, max);
+            ans = Math.max(cnt, ans);
         }
         System.out.println(ans);
     }
