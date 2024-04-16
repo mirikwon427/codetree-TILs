@@ -17,10 +17,10 @@ public class Main {
         }
         int cnt = 0, ans= 0;
         for(int i = 0; i < n; i++) {
-            if(i >= 1 && a[i] > t && a[i-1] > t){
+            if(a[i] > t){
                 cnt++;
             } else {
-                cnt = 1;
+                cnt = 0;
             }
             ans = Math.max(ans, cnt);
         }
