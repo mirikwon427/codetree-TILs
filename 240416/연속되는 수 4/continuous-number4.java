@@ -14,7 +14,7 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             a[i] = Integer.parseInt(st.nextToken());
         }
-        int ans, cnt = 0;
+        int ans = 0, cnt = 0;
         for(int i = 0; i < n; i++) {
             if(i >= 1 && a[i] > a[i-1]) {
                 cnt++;
