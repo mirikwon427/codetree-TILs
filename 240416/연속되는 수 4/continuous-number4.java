@@ -8,7 +8,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        n = Intege.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
         int[] a = new int[n];
         for(int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
