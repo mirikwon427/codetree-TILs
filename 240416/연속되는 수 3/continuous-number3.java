@@ -15,34 +15,15 @@ public class Main {
 
             a[i] = Integer.parseInt(st.nextToken());
         }
-        int ans = 0, plus = 0, minus = 0;
+        int ans = 0, cnt = 0;
         for(int i = 0; i < n; i++) {
-            if(i >= 1 && a[i] > 0 && a[i-1] > 0) {
-                plus++;
-                minus = 0;
-            } else if(i >= 1 && a[i] < 0 && a[i-1] < 0){
-                plus = 0;
-                minus++;
+            if(i >= 1 && a[i] * a[i-1] > 0) {
+                cnt++;
             } else {
-                if(minus < plus) {
-                    ans = plus;
-                }
-                if(plus < minus) {
-                    ans = minus;
-                }
-                if(i == 0){
-                    if(a[i] >= 0) {
-                        plus++;
-                    } else {
-                        minus++;
-                    }
-                } else if(a[i] >= 0) {
-                    plus++;
-                    minus = 1;
-                } else {
-                    minus++;
-                }
+                cnt = 1;
             }
+
+            ans = Math.max(cnt, max);
         }
         System.out.println(ans);
     }
