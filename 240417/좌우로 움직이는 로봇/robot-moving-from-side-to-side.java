@@ -54,7 +54,7 @@ public class Main {
         }
         int cnt = 0;
         int timeMax = Math.max(timeA,timeB);
-        for(int i = 1; i <= timeMax; i++) {
+        for(int i = 1; i < timeMax; i++) {
             if(distanceA[i] == distanceB[i]) {
                 if(distanceA[i-1] != distanceB[i-1]){
                     cnt++;
