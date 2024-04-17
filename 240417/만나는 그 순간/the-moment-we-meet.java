@@ -48,7 +48,6 @@ public class Main {
                 ans = i;
                 break;
             }
-            ans++;
         }
 
         System.out.println(ans);
