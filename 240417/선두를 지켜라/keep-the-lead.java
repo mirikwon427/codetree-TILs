@@ -35,7 +35,7 @@ public class Main {
             }
         }
         int[] ans = new int[MAX_N];
-        for(int i = 0; i < target1; i++) {
+        for(int i = 1; i < target1; i++) {
             if(distanceA[i] > distanceB[i]){
                 ans[i] = 1;
             } else {
@@ -43,8 +43,8 @@ public class Main {
             }
         }
         int cnt = 0;
-        for(int i = 0; i < target1; i++) {
-            if(i >= 1 && ans[i] != ans[i-1]){
+        for(int i = 2; i < target1; i++) {
+            if(ans[i] != ans[i-1]){
                 cnt++;
             }
         }
