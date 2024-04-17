@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_T = 1000000;
+    public static final int MAX_T = 100;
 
     public static int n, m;
     public static int[] distanceA = new int[MAX_T+1];
@@ -46,8 +46,14 @@ public class Main {
                 }
             }
         }
+        for(int i = timeA; i <= MAX_T; i++) {
+           distanceA[i] = distanceA[timeA-1];
+        }
+        for(int i = timeB; i < MAX_T; i++) {
+            distanceB[i] = distanceB[timeB-1];
+        }
         int cnt = 0;
-        for(int i = 1; i <= timeB; i++) {
+        for(int i = 1; i <= MAX_T; i++) {
             if(distanceA[i] == distanceB[i]) {
                 if(distanceA[i-1] != distanceB[i-1]){
                     cnt++;
