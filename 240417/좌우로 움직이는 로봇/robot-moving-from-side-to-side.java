@@ -53,7 +53,8 @@ public class Main {
             distanceB[i] = distanceB[timeB-1];
         }
         int cnt = 0;
-        for(int i = 1; i <= MAX_T; i++) {
+        int timeMax = Math.max(timeA,timeB);
+        for(int i = 1; i <= timeMax; i++) {
             if(distanceA[i] == distanceB[i]) {
                 if(distanceA[i-1] != distanceB[i-1]){
                     cnt++;
