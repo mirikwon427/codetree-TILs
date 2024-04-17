@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_N = 100;
+    public static final int MAX_N = 1000000;
 
     public static int n, m, v, t;
     public static int[] distanceA = new int[MAX_N+1];
