@@ -16,25 +16,16 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        int[] ans = new int[n + 1];
-        int cnt = 0;
+        int[] penaltyNum = new int[n + 1];
+        int ans = -1;
         for(int j = 1; j <= m; j++) {
-            for(int i = 0; i < n; i++) {
-                if(arr[j] == i) {
-                    ans[i]++;
-                }
-            }
-        }
-        int num = -1;
-        for(int i = 1; i <= n; i++){
-            if(ans[i] == k) {
-                for(int j = 0; j < ans[i]; i++) {
-                    num++;
-                }
+            int target = arr[j];
+            penaltyNum[target]++;
+            if(target >= 0 && penaltyNum[target] >= k) {
+                ans = target;
                 break;
             }
         }
-        System.out.print(num);
-        
+        System.out.print(ans);
     }
 }
