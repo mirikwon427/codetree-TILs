@@ -42,7 +42,7 @@ public class Main {
             }
         }
 
-        int ans = 0;
+        int ans = -1;
         for(int i = 1; i < MAX_T; i++) {
             if(arrA[i] == arrB[i]) {
                 ans = i;
