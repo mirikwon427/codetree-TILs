@@ -2,9 +2,12 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_R = 20;
-    public static int n,m,t;
-    public static String d;
+    public static final int MAX_T = 1000000;
+
+    public static int n,m;
+    public static int[] arrA = new int[MAX_T + 1];
+    public static int[] arrB = new int[MAX_T + 1];
+    
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -12,44 +15,43 @@ public class Main {
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
 
-        int[] arrN = new int[MAX_R + 1];
-        int[] arrM = new int[MAX_R + 1];        
-        int cnt1 = 0, cnt2 = 0;
+        int cnt1 = 1, cnt2 = 1;
         for(int i = 0; i < n + m; i++) {
             st = new StringTokenizer(br.readLine());
-            d = st.nextToken();
-            t = Integer.parseInt(st.nextToken());
+            String d = st.nextToken();
+            int t = Integer.parseInt(st.nextToken());
+
             if(i < n) {
-                t += cnt1;
-                if(d.equals("R")) {
-                    for(int j = cnt1; j <= t; j++) {
-                        arrN[j] = j;
+                while(t --> 0) {
+                    if( d.equals("R") ) {
+                        arrA[cnt1] = arrA[cnt1 - 1] +1;
+                    } else {
+                        arrA[cnt1] = arrA[cnt1 - 1] -1;
                     }
-                    cnt1 = j;
-                } else {
-                    for(int k = cnt1; k <= t; k++) {
-                        arrN[k] = k-1;
-                    }
-                    cnt1 = k;
+                    cnt1++;
                 }
             } else {
-                t += cnt2;
-                if(d.equals("R")) {
-                    for(int j = cnt2; j < t; j++) {
-                        arrM[j] = cnt2;
+                while(t --> 0) {
+                    if( d.equals("R") ) {
+                        arrB[cnt2] = arrB[cnt2 - 1] +1;
+                    } else {
+                        arrB[cnt2] = arrB[cnt2 - 1] -1;
                     }
-                    cnt2 = j;
-                } else {
-                    for(int k = cnt2; k < t; k++) {
-                        arrM[k] = cnt2 -1;
-                    }
-                    cnt2 = k;
+                    cnt2++;
                 }
             }
         }
-        
-        System.out.println(Arrays.toString(arrN));
-        System.out.print(Arrays.toString(arrM));
+
+        int ans = 0;
+        for(int i = 1; i < MAX_R; i++) {
+            if(arrN[i] == arrM[i]) {
+                ans = i;
+                break;
+            }
+            ans++;
+        }
+
+        System.out.println(ans);
 
     }
 }
