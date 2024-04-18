@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_T = 1000;
-    public static final int MAX_N = 1000;
+    public static final int MAX_T = 1000000;
+    public static final int MAX_N = 1000000;
 
     public static int n, m, v, t;
     public static int[] arrA = new int[MAX_N + 1];
