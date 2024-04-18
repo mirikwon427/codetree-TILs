@@ -63,7 +63,7 @@ public class Main{
                 infected[target2] = true;
             }
             if(shakeNum[target2] <= k && infected[target2]) {
-                infected[target2] = true;
+                infected[target1] = true;
             }
         }
         
