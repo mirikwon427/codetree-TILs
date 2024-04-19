@@ -29,7 +29,7 @@ public class Main {
                 dir = 3;
             }
             x += dx[dir] * v;
-            y += dx[dir] * v;
+            y += dy[dir] * v;
         }
         System.out.print(x + " " + y);
     }
