@@ -19,11 +19,11 @@ public class Main {
             int v = Integer.parseInt(st.nextToken());
 
             int dir;
-            if(d == 'E'){
+            if(d.equals("E")){
                 dir = 0;
-            } else if(d == 'W') {
+            } else if(d.equals("W")) {
                 dir = 1;
-            } else if(d == 'S') {
+            } else if(d.equals("S")) {
                 dir = 2;
             } else {
                 dir = 3;
