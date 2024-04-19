@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Main {
     public static int x, y;
-    public static int[] dx = new int[]{0, 0, 1, -1};
-    public static int[] dy = new int[]{1, -1, 0, 0};
+    public static int[] dx = new int[]{0, 1, 0, -1};
+    public static int[] dy = new int[]{1, 0, -1, 0};
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -18,12 +18,12 @@ public class Main {
             } else if(cDir == 'R') {
                 dirNum = (dirNum + 1) % 4;
             } else {
-                if(dirNum == 0 ) {
+                if(dirNum == 0) {
                     y += dx[dirNum];
                 } else if(dirNum == 1) {
-                    y += dx[dirNum];
-                } else if(dirNum == 2) {
                     x += dx[dirNum];
+                } else if(dirNum == 2) {
+                    y += dx[dirNum];
                 } else {
                     x += dx[dirNum];
                 }
