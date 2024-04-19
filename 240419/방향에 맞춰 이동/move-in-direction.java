@@ -23,7 +23,7 @@ public class Main {
                 dir = 0;
             } else if(d.equals("S")) {
                 dir = 1;
-            } else if(d.equals("S")) {
+            } else if(d.equals("W")) {
                 dir = 2;
             } else {
                 dir = 3;
