@@ -5,8 +5,6 @@ public class Main {
     public static final int MAX_N = 10000;
 
     public static int n;
-    public static int[] dx = new int[]{1, 0, -1, 0};
-    public static int[] dy = new int[]{0, -1, 0, 1};
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br. readLine());
