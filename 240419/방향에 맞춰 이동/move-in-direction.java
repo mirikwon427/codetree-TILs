@@ -21,7 +21,7 @@ public class Main {
             int dir;
             if(d.equals("E")){
                 dir = 0;
-            } else if(d.equals("W")) {
+            } else if(d.equals("S")) {
                 dir = 1;
             } else if(d.equals("S")) {
                 dir = 2;
