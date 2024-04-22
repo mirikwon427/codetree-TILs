@@ -24,7 +24,7 @@ public class Main {
 
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
-                for(int k = 0; k < n; k++) {
+                for(int k = 0; k < 4; k++) {
                     int nx = i + dx[k], ny = j + dy[k];
 
                     if(nx < 0 || ny < 0 || nx >= n || ny >= n) {
