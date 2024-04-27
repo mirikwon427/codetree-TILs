@@ -43,17 +43,13 @@ public class Main {
         d = st.nextToken();
 
         int x = getDir(d.charAt(0));
-        for(int i = 0; i <= t; i++){
-            if(inRange(r,c)) {
-                r += dx[x];
-                c += dy[x];
+        while(t--> 0){
+            int nx = r + dx[x], ny = c + dy[x];
+            if(inRange(nx,ny)) {
+                r = nx;
+                c = ny;
             } else {
-                if(r == n || c == n) {
-                    t--;
-                }
                 x = getOppoDir(x);
-                r += dx[x];
-                c += dy[x];
             }
         }
         System.out.print(r + " " + c);
