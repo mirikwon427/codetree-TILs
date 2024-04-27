@@ -44,7 +44,7 @@ public class Main {
 
         int x = getDir(d.charAt(0));
         
-        for(int i = 0; i <= t; i++) {
+        for(int i = 0; i < t; i++) {
             int nx = r + dx[x], ny = c + dy[x];
             if(inRange(nx,ny)) {
                 r = nx;
