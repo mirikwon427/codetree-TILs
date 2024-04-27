@@ -43,8 +43,8 @@ public class Main {
         d = st.nextToken();
 
         int x = getDir(d.charAt(0));
-        r--;c--;
-        while(t--> 0){
+        
+        for(int i = 0; i <= t; i++) {
             int nx = r + dx[x], ny = c + dy[x];
             if(inRange(nx,ny)) {
                 r = nx;
