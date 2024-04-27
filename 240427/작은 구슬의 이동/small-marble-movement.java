@@ -21,16 +21,6 @@ public class Main {
         else
             return 3;
     }
-    public static int getOppoDir(int x) {
-        if( x == 0 )
-            return 3;
-        else if( x == 1 )
-            return 2;
-        else if( x == 2 )
-            return 1;
-        else
-            return 0;
-    }
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -42,15 +32,15 @@ public class Main {
         c = Integer.parseInt(st.nextToken());
         d = st.nextToken();
 
-        int x = getDir(d.charAt(0));
+        int dir = getDir(d.charAt(0));
         r--;c--;
         while(t--> 0) {
-            int nx = r + dx[x], ny = c + dy[x];
+            int nx = r + dx[dir], ny = c + dy[dir];
             if(inRange(nx,ny)) {
                 r = nx;
                 c = ny;
             } else {
-                x = getOppoDir(x);
+                dir = 3 - dir;
             }
         }
         System.out.print((r+1) + " " + (c+1));
