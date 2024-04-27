@@ -9,7 +9,7 @@ public class Main {
     public static int[] dy = new int[]{1, 0, 0, -1};
 
     public static boolean inRange(int x, int y) {
-        return 0 < x && x < n && 0 < y && y < n ;
+        return 0 <= x && x < n && 0 <= y && y < n ;
     }
     public static int getDir(char a) {
         if(a == 'R')
