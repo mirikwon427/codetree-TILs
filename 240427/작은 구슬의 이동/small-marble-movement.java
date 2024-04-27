@@ -43,7 +43,7 @@ public class Main {
         d = st.nextToken();
 
         int x = getDir(d.charAt(0));
-        r--,c--;
+        r--;c--;
         while(t--> 0){
             int nx = r + dx[x], ny = c + dy[x];
             if(inRange(nx,ny)) {
@@ -53,6 +53,6 @@ public class Main {
                 x = getOppoDir(x);
             }
         }
-        System.out.print(r + " " + c);
+        System.out.print((r+1) + " " + (c+1));
     }
 }
