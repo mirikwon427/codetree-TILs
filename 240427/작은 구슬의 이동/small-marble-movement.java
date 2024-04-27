@@ -21,12 +21,12 @@ public class Main {
         else
             return 3;
     }
-    public static int getOppoDir(char a) {
-        if(a == 'R')
+    public static int getOppoDir(int x) {
+        if( x == 0 )
             return 3;
-        else if(a == 'D')
+        else if( x == 1 )
             return 2;
-        else if(a == 'U')
+        else if( x == 2 )
             return 1;
         else
             return 0;
@@ -42,17 +42,18 @@ public class Main {
         c = Integer.parseInt(st.nextToken());
         d = st.nextToken();
 
-        int x, cnt = 0;
+        int x = getDir(d.charAt(0));
         for(int i = 0; i <= t; i++){
-            if(inRange(r,c) && cnt == 0) {
-                x = getDir(d.charAt(0));
+            if(inRange(r,c)) {
                 r += dx[x];
                 c += dy[x];
             } else {
-                x = getOppoDir(d.charAt(0));
+                if(r == n || c == n) {
+                    t--;
+                }
+                x = getOppoDir(x);
                 r += dx[x];
                 c += dy[x];
-                cnt++;
             }
         }
         System.out.print(r + " " + c);
