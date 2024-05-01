@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_N = 100;
+    public static final int MAX_N = 1000;
     public static int n,cnt, dirNum = 0, nx, ny,start;
     public static int[][] arr = new int[MAX_N][MAX_N];
     public static int[] dx = {1, 0, -1, 0};
