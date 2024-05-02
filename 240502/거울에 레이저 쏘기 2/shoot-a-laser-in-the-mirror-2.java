@@ -21,7 +21,7 @@ public class Main{
             x = n - (num - 3 * n); y = 0; moveDir = 3;
         }
     }
-    public static void move(nextDir){
+    public static void move(int nextDir){
         int[] dx = new int[]{1, 0, -1, 0};
         int[] dy = new int[]{0, -1, 0, 1};
 
@@ -62,7 +62,7 @@ public class Main{
                 arr[i][j] = input.charAt(j);
             }
         }
-
+        st = new StringTokenizer(br.readLine());
         startNum = Integer.parseInt(st.nextToken());
 
         initalize(startNum);
