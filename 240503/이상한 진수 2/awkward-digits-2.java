@@ -1,23 +1,21 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
 
-public class Main{
+public class Main {
     public static final int INT_MIN = Integer.MIN_VALUE;
-
-    public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String binary = br.readLine();
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String binary = sc.next();
         int ans = INT_MIN;
-        for(int i = 0; i < binary.length();i++) {
-            binary = binary.substring(0,i) + (char)('0' + '1' - binary.charAt(i)) + binary.substring(i + 1);
+        for(int i = 0; i < (int) binary.length(); i++) {
+            binary = binary.substring(0, i) + (char)('0' + '1' - binary.charAt(i)) + binary.substring(i + 1);
+            
             int num = 0;
-            for(int j = 0 ; j < binary.length();j++){
+            for(int j = 0; j < (int) binary.length(); j++)
                 num = num * 2 + (binary.charAt(j) - '0');
-            }
-            binary = binary.substring(0,1) + (char)('0' + '1' - binary.charAt(i)) + binary.substring(i + 1);
-            ans = Math.max(ans,num);
+            ans = Math.max(ans, num);
+            binary = binary.substring(0, i) + (char)('0' + '1' - binary.charAt(i)) + binary.substring(i + 1);
         }
-        System.out.println(ans);
+        System.out.print(ans);
     }
 }
