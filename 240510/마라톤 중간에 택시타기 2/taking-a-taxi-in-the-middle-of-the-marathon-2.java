@@ -20,13 +20,13 @@ public class Main {
         }
 
         for(int i = 1; i < n - 1; i++) {
-            int xValue = 0;
+            int prevIdx = 0;
             int dist = 0;
             for(int j = 1; j < n; j++) {
                 if(j == i){
                     continue;
                 }
-                dist += Math.abs(x[xValue]-x[j]) + Math.abs(y[xValue] + y[j]);
+                dist += Math.abs(x[prevIdx]-x[j]) + Math.abs(y[prevIdx] + y[j]);
                 xValue = j;
             }
             min = Math.min(min, dist);
