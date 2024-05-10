@@ -2,12 +2,12 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static final int MAX_R = 2000;
-    public static final int MAX_D = 2;
+    public static final int MAX_N = 100;
+    public static final int min = Integer.MAX_VALUE;
+    
     public static int n;
-    public static int[][] marathon = new int[MAX_R][MAX_R];
-    public static int distance,cnt;
-    public static int min = Integer.MAX_VALUE;
+    public static int[] x = new int[MAX_N];
+    public static int[] y = new int[MAX_N];
 
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,26 +15,21 @@ public class Main {
         n = Integer.parseInt(br.readLine());
         for(int i = 0; i < n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            for(int j = 0; j < MAX_D; j++) {
-                marathon[i][j] = Integer.parseInt(st.nextToken());
-            }
+            x[i] = Integer.parseInt(st.nextToken());
+            y[i] = Integer.parseInt(st.nextToken());
         }
 
-        for(int i = 0; i < n-2; i++) {
-            cnt++;
+        for(int i = 1; i < n - 1; i++) {
             int xValue = 0;
-            distance = 0;
-            for(int j = 0; j < n-1; j++) {
-                if((j+1) == cnt){
+            int dist = 0;
+            for(int j = 1; j < n; j++) {
+                if(j == i){
                     continue;
                 }
-                for(int x = 0; x < MAX_D; x++) {
-                    distance += Math.abs(marathon[xValue][x] - marathon[j+1][x]);
-                }
-                xValue = j+1;
+                dist += Math.abs(x[xValue]-x[j]) + Math.abs(y[xValue] + y[j]);
             }
-            min = Math.min(min, distance);
+            min = Math.min(min, dist);
         }
-        System.out.print(min);
+        System.out.println(min);
     }
 }
