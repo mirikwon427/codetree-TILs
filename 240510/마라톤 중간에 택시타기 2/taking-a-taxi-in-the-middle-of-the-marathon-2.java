@@ -3,11 +3,11 @@ import java.io.*;
 
 public class Main {
     public static final int MAX_N = 100;
-    public static final int min = Integer.MAX_VALUE;
     
     public static int n;
     public static int[] x = new int[MAX_N];
     public static int[] y = new int[MAX_N];
+    public static int min = Integer.MAX_VALUE;
 
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,6 +27,7 @@ public class Main {
                     continue;
                 }
                 dist += Math.abs(x[xValue]-x[j]) + Math.abs(y[xValue] + y[j]);
+                xValue = j;
             }
             min = Math.min(min, dist);
         }
