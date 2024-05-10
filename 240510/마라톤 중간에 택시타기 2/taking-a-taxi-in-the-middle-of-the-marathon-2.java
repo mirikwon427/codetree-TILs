@@ -27,7 +27,7 @@ public class Main {
                     continue;
                 }
                 dist += Math.abs(x[prevIdx]-x[j]) + Math.abs(y[prevIdx] + y[j]);
-                xValue = j;
+                prevIdx = j;
             }
             min = Math.min(min, dist);
         }
