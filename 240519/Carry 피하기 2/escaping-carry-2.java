@@ -18,41 +18,33 @@ public class Main {
         for(int i = 0; i < n; i++) {
 
             for(int j = i + 1; j < n; j++) {
-                int number1 = numbers[i];
-                int number2 = numbers[j];
-                int number4 = number1 % 10;
-                int number5 = number2 % 10;
-                if(number4 + number5 < 10){
-                        for(int k = j + 1; k < n; k++) {
-                            int number3 = numbers[k];
-                            int number6 = number3 % 10;
-                            if(number4 + number5 + number6 < 10) {
-                                String t = Integer.toString(numbers[i]);
+                    for(int k = j + 1; k < n; k++) {
+                        int number1 = numbers[i];
+                        int number2 = numbers[j];
+                        int number4 = number1 % 10;
+                        int number5 = number2 % 10;
+                        int number3 = numbers[k];
+                        int number6 = number3 % 10;
+                        if(number4 + number5 + number6 < 10) {
+                            String t = Integer.toString(numbers[i]);
 
-                                for(int len = t.length(); len > 0; len--) {
-                                    number4 = number1 %10;
-                                    number5 = number2 %10;
-                                    number6 = number3 %10;
-                                    if(number4 + number5 + number6 > 10){
-                                        ans = 0;
-                                        break;
-                                    } else if(number4 + number5 + number6 < 10) {
-                                        number1 = number1 /10;
-                                        number2 = number2 /10;
-                                        number3 = number3 /10;
-
-                                        ans = numbers[i] + numbers[j] + numbers[k];
-                                    }
-                                    if(number1 == 0) {
-                                        break;
-                                    }
+                            for(int len = t.length(); len > 0; len--) {
+                                number4 = number1 %10;
+                                number5 = number2 %10;
+                                number6 = number3 %10;
+                                if(number4 + number5 + number6 >= 10){
+                                    ans = -1;
+                                    break;
+                                } else if(number4 + number5 + number6 < 10) {
+                                    ans = numbers[i] + numbers[j] + numbers[k];
                                 }
-                                result = Math.max(ans, result);
+                                number1 = number1 /10;
+                                number2 = number2 /10;
+                                number3 = number3 /10;
                             }
+                            result = Math.max(ans, result);
                         }
-
-                }
-
+                    }
             }
         }
 
