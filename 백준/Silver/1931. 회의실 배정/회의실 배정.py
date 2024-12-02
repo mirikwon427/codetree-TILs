@@ -1,8 +1,10 @@
+import sys
+
 N = int(input())
 prev_end = 0
 cnt = 0
 
-time = [tuple(map(int, input().split())) for _ in range(N)]
+time = [tuple(map(int, sys.stdin.readline().split())) for _ in range(N)]
 
 sorted_time = sorted(time, key=lambda x : (x[1], x[0]))
 
