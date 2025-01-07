@@ -2,7 +2,6 @@ N = input()
 
 sorted_N = sorted(N, reverse = True)
 ans = sum(int(i) for i in sorted_N)
-
 if '0' not in sorted_N:
     print(-1)
 else:
