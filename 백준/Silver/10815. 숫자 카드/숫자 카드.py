@@ -1,25 +1,32 @@
 import sys
+input = lambda: sys.stdin.readline().rstrip()
 
-N = sys.stdin.readline()
-n_list = list(map(int, sys.stdin.readline().split()))
-M = sys.stdin.readline()
-m_list = list(map(int, sys.stdin.readline().split()))
+N = int(input())
+cards = map(int, input().split())
+M = int(input())
+nums = map(int, input().split())
 
-n_list.sort()
 
-def binary_search(arr, target, low, high):
-    while low <= high:
-        mid = (low + high) // 2  
-        if arr[mid] > target:  
-            high = mid - 1
-        elif arr[mid] < target:  
-            low = mid + 1
+sort_cards = sorted(cards)
+
+def search(num):
+    global sort_cards
+    left = 0
+    right = len(sort_cards) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if sort_cards[mid] < num:
+            left = mid + 1
+        elif sort_cards[mid] > num:
+            right = mid - 1
         else:
-            return True
-    return False
+            return 1
+    return -1
 
-for x in m_list:
-    if binary_search(n_list, x, 0, len(n_list)-1):
+
+for num in nums:
+    if search(num) == 1:
         print('1', end=' ')
     else:
         print('0', end=' ')
