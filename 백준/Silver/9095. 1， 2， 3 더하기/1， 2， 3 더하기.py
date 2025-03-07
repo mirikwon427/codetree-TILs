@@ -1,19 +1,16 @@
 import sys
 input = sys.stdin.readline
 
-T = int(input())
+f = [0] * 11
+f[1] = 1
+f[2] = 2
+f[3] = 4
 
-for _ in range(T):
-    N = int(input())
-    dp = [0] * (N + 1)
-    dp[0] = 1
-    
-    for i in range(1, N + 1):
-        if i >= 1:
-            dp[i] += dp[i - 1]
-        if i >= 2:
-            dp[i] += dp[i - 2]
-        if i >= 3:
-            dp[i] += dp[i - 3]
-            
-    print(dp[i])
+for i in range(4, 11):
+    f[i] = f[i - 1] + f[i - 2] + f[i - 3]
+
+n = int(input())
+
+for _ in range(n):
+    T = int(input())
+    print(f[T]) 
