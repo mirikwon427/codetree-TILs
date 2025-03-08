@@ -7,7 +7,7 @@ def func(i, j):
     if dp[i][j] != -1:
         return dp[i][j]
 
-    dp[i][j] = max(func(i - 1, j), func(i, j - 1), func(i - 1, j - 1)) + arr[i][j]
+    dp[i][j] = max(func(i - 1, j), func(i, j - 1)) + arr[i][j]
     return dp[i][j]
 
 
