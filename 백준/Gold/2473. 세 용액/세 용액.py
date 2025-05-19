@@ -15,7 +15,6 @@ for i in range(n):
     
     while left < right:
         new_mix = arr[i] + arr[left] + arr[right]
-        
         if abs(new_mix) <= mix:
             mix = abs(new_mix)
             x = arr[i]
